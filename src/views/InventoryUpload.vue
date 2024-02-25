@@ -124,7 +124,7 @@ import { auth } from '~/main.js';
 },
         async downloadFile(fileName) {
           if (typeof localStorage !== 'undefined') {
-            const emailUser = localStorage.getItem('email');
+          const emailUser = localStorage.getItem('email');
       const storageRef = firebase.storage().ref(`files/${emailUser}/`)
       const fileRef = storageRef.child(fileName)
       try {
@@ -133,11 +133,7 @@ import { auth } from '~/main.js';
       } catch (error) {
         console.error('Error downloading file:', error)
       }
-       // localStorage is available
-    // Your code here
-} else {
-    // localStorage is not available, handle accordingly
-}
+    }
     },
       onFileChange(event) {
         this.file = event.target.files[0];
@@ -148,7 +144,7 @@ import { auth } from '~/main.js';
       //  const emailUser=  firebase.auth().currentUser.email;
         // Get today's date
         if (typeof localStorage !== 'undefined') {
-            const emailUser = localStorage.getItem('email');
+          const emailUser = localStorage.getItem('email');
 
         const storageRef = firebase.storage().ref(`files/${emailUser}/`);
         
@@ -184,8 +180,7 @@ import { auth } from '~/main.js';
       async fetchUploadedFiles(date) {
         // const emailUser=firebase.auth().currentUser.email;
         if (typeof localStorage !== 'undefined') {
-            const emailUser = localStorage.getItem('email');
-        // const emailUser = sessionStorage.getItem('email');
+          const emailUser = localStorage.getItem('email');
      
         const storageRef = firebase.storage().ref(`files/${emailUser}`);
         console.log(this.isUserEmail);
@@ -202,7 +197,7 @@ import { auth } from '~/main.js';
       async fetchUploadedFile() {
         // const emailUser=firebase.auth().currentUser.email;
         if (typeof localStorage !== 'undefined') {
-            const emailUser = localStorage.getItem('email');
+          const emailUser = localStorage.getItem('email');
         const directoryRef = firebase.storage().ref(`files/${emailUser}`);
 console.log(this.isUserEmail);
 directoryRef.listAll()

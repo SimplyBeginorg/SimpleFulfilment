@@ -256,7 +256,7 @@ methods:{
     auth.signInWithEmailAndPassword(this.email, this.password)
         .then(() => {
           if (typeof localStorage !== 'undefined') {
-          sessionStorage.setItem('email', this.email);
+          localStorage.setItem('email', this.email);
 
     // localStorage is available
     // Your code here
