@@ -123,7 +123,8 @@ import { auth } from '~/main.js';
 
 },
         async downloadFile(fileName) {
-          const emailUser = localStorage.getItem('email');
+          if (typeof localStorage !== 'undefined') {
+            const emailUser = localStorage.getItem('email');
       const storageRef = firebase.storage().ref(`files/${emailUser}/`)
       const fileRef = storageRef.child(fileName)
       try {
@@ -132,6 +133,11 @@ import { auth } from '~/main.js';
       } catch (error) {
         console.error('Error downloading file:', error)
       }
+       // localStorage is available
+    // Your code here
+} else {
+    // localStorage is not available, handle accordingly
+}
     },
       onFileChange(event) {
         this.file = event.target.files[0];
@@ -141,7 +147,8 @@ import { auth } from '~/main.js';
         const today = new Date().toISOString().split('T')[0];
       //  const emailUser=  firebase.auth().currentUser.email;
         // Get today's date
-        const emailUser = localStorage.getItem('email');
+        if (typeof localStorage !== 'undefined') {
+            const emailUser = localStorage.getItem('email');
 
         const storageRef = firebase.storage().ref(`files/${emailUser}/`);
         
@@ -159,7 +166,7 @@ import { auth } from '~/main.js';
         }
       } else {
        this.uploadFileToast()
-    }
+    }}
       },
       uploadFileToast(){
         this.$bvToast.toast(`Please select file`, {
@@ -176,7 +183,9 @@ import { auth } from '~/main.js';
         });},
       async fetchUploadedFiles(date) {
         // const emailUser=firebase.auth().currentUser.email;
-        const emailUser = localStorage.getItem('email');
+        if (typeof localStorage !== 'undefined') {
+            const emailUser = localStorage.getItem('email');
+        // const emailUser = sessionStorage.getItem('email');
      
         const storageRef = firebase.storage().ref(`files/${emailUser}`);
         console.log(this.isUserEmail);
@@ -187,12 +196,13 @@ import { auth } from '~/main.js';
           this.uploadedFiles = files;
         } catch (error) {
           console.error('Error fetching uploaded files:', error);
-        }
+        }}
       }
       ,
       async fetchUploadedFile() {
         // const emailUser=firebase.auth().currentUser.email;
-        const emailUser = localStorage.getItem('email');
+        if (typeof localStorage !== 'undefined') {
+            const emailUser = localStorage.getItem('email');
         const directoryRef = firebase.storage().ref(`files/${emailUser}`);
 console.log(this.isUserEmail);
 directoryRef.listAll()
@@ -206,7 +216,7 @@ directoryRef.listAll()
   })
   .catch((error) => {
     console.error('Error listing files:', error);
-  });
+  });}
       // const storageRef = firebase.storage().ref(`files/${emailUser}`)
       // const files = await storageRef.listAll()
       // files.items.forEach(async fileRef => {

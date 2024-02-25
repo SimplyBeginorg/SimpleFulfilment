@@ -255,7 +255,14 @@ methods:{
     //  if(this.service_select != null ){
     auth.signInWithEmailAndPassword(this.email, this.password)
         .then(() => {
-          localStorage.setItem('email', this.email);
+          if (typeof localStorage !== 'undefined') {
+          sessionStorage.setItem('email', this.email);
+
+    // localStorage is available
+    // Your code here
+} else {
+    // localStorage is not available, handle accordingly
+}
 
           this.closeNav();
           this.authToast('User logged in successfully!');
