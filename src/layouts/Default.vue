@@ -268,7 +268,7 @@ methods:{
 } else {
     // localStorage is not available, handle accordingly
 }
-gotoRecord();
+    this.gotoRecord();
 
         this.email="";this.password="";
       })
