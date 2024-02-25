@@ -255,6 +255,11 @@ methods:{
     //  if(this.service_select != null ){
     auth.signInWithEmailAndPassword(this.email, this.password)
         .then(() => {
+        
+          this.closeNav();
+          this.authToast('User logged in successfully!');
+          // alert("User logged in successfully!");
+          console.log('User logged in successfully!');
           if (typeof localStorage !== 'undefined') {
           localStorage.setItem('email', this.email);
 
@@ -263,18 +268,17 @@ methods:{
 } else {
     // localStorage is not available, handle accordingly
 }
+gotoRecord();
 
-          this.closeNav();
-          this.authToast('User logged in successfully!');
-          // alert("User logged in successfully!");
-          console.log('User logged in successfully!');
         this.email="";this.password="";
-        this.$router.push({ path: "/inventory" });
       })
         .catch((error) => {
           this.authToast('invalid Email/Password.');       
           console.error('Error logging in:', error.message);
         });
+
+       
+
       // }else{
       //    this.categoryToast();
       //   }
