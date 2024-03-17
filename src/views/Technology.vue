@@ -41,9 +41,17 @@
       console.log(error);
   });
       },
-    metaInfo: {
-      title: 'Store'
-    }
+      metaInfo: {
+    title: 'Advanced Warehouse Technology & Systems | ACT Logistics',
+//   meta: [
+//  {name: "description", content: "ACT Logistics utilizes top-tier Warehouse Management Systems (WMS), Radio Frequency (RF) technology, and robust Electronic Data Interchange (EDI) solutions to provide efficient and accurate order fulfillment. Our customer portal offers real-time supply chain visibility, inventory tracking, and reporting. Leverage our advanced technology for seamless integration with ecommerce platforms."},
+//  {property: "og:description", content: "ACT Logistics utilizes top-tier Warehouse Management Systems (WMS), Radio Frequency (RF) technology, and robust Electronic Data Interchange (EDI) solutions to provide efficient and accurate order fulfillment. Our customer portal offers real-time supply chain visibility, inventory tracking, and reporting. Leverage our advanced technology for seamless integration with ecommerce platforms."},
+
+//  { property: "og:title", content: 'Advanced Warehouse Technology & Systems | ACT Logistics'},
+//                      { key: 'keywords',property: "og:keywords" , content: "warehouse management system, wms, radio frequency technology, rf, electronic data interchange, edi, ecommerce integration, supply chain visibility, inventory tracking, real-time reporting" }
+//     ,            
+//  ]
+  },
   }
   </script>
   <style scoped>

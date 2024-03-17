@@ -66,8 +66,10 @@
       <button @click="uploadFile" :disabled="!file">Upload File</button>
     </div> -->
       <div class="row table-responsive mt-4 ">
-
-        <table
+        <div  v-if="uploadedFiles.length === 0">
+         <h2 class="pt-10" style="margin:auto;textAlign:center;color:#3a5768!important"> No files uploaded yet.</h2>
+        </div>
+        <table v-else
         role="table"
         
         aria-busy="false"

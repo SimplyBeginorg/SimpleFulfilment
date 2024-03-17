@@ -60,5 +60,15 @@ module.exports  = [
         }
       },
       component: './src/views/InventoryUpload.vue'
+    } ,
+    {
+      path: '/users',
+      route: {
+        name: 'User',
+        meta: {
+          requiresAuth: true
+        }
+      },
+      component: './src/views/Users.vue'
     }  
     ]

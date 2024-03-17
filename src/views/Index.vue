@@ -231,9 +231,16 @@ export default {
     console.log(error);
 });
     },
-  metaInfo: {
-    title: 'Fullfilment'
-  }
+    metaInfo: {
+    title: 'Order Fulfillment Services | Warehousing & Distribution | Total Fulfilment',
+//   meta: [
+//  {name: "description", content: "Total Fulfilment provides comprehensive order fulfillment services, warehousing, and distribution solutions for online retailers and wholesalers. We store, pick, pack, and ship orders efficiently to meet consumer demands. Leverage our industry-leading pick and pack services, secure warehousing, and powerful inventory management tools."},
+//                     { property: "og:title", content: 'Order Fulfillment Services | Warehousing & Distribution | Total Fulfilment'},
+//                     {property: "og:description", content: "Total Fulfilment provides comprehensive order fulfillment services, warehousing, and distribution solutions for online retailers and wholesalers. We store, pick, pack, and ship orders efficiently to meet consumer demands. Leverage our industry-leading pick and pack services, secure warehousing, and powerful inventory management tools."},
+//                      { key: 'keywords',property: "og:keywords" , content: "order fulfillment services, warehousing, distribution, pick and pack, ecommerce fulfillment, inventory management, third-party logistics, 3pl" }
+//     ,            
+//  ]
+  },
 }
 </script>
 <style scoped >

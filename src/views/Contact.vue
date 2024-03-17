@@ -111,8 +111,14 @@
    Footer
    }
    ,metaInfo: {
-       title: 'Support'
-     }, data(){
+    title: 'Support | Contact Us',
+  meta: [
+ {name: "description", content: "Contact us page"},
+                    { property: "og:title", content: 'Support | Contact Us'},
+                    {property: "og:description", content: "Contact us page"},
+               
+ ]
+  }, data(){
        return{  
                 
                password: '',

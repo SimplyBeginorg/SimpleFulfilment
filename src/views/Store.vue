@@ -173,9 +173,17 @@
       console.log(error);
   });
       },
-    metaInfo: {
-      title: 'Store'
-    }
+      metaInfo: {
+    title: 'Secure Warehousing & Storage Solutions | Total Fulfilment',
+//   meta: [
+//  {name: "description", content: "Total Fulfilment offers safe and secure warehousing and storage solutions. With comprehensive security measures, including CCTV, perimeter fencing, and team member security checks, your goods are protected. Our climate-controlled facilities provide optimal conditions for garment storage and high-value items. Flexible storage options available."},
+//  {property: "og:description", content: "Total Fulfilment offers safe and secure warehousing and storage solutions. With comprehensive security measures, including CCTV, perimeter fencing, and team member security checks, your goods are protected. Our climate-controlled facilities provide optimal conditions for garment storage and high-value items. Flexible storage options available."},
+
+//  { property: "og:title", content: 'Secure Warehousing & Storage Solutions | Total Fulfilment'},
+//                      { key: 'keywords',property: "og:keywords" , content: "secure warehousing, storage solutions, garment storage, high-value storage, climate-controlled facilities, flexible storage, secure distribution center" }
+//     ,            
+//  ]
+  },
   }
   </script>
   <style scoped>

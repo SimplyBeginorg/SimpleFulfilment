@@ -15,7 +15,7 @@
               <!-- <h2 style="color:#3a5768!important;padding:0px!important" class="fontfamily ">Welcome to Fullfillment Company</h2> -->
             
               <form @submit.prevent="login()" v-show="loginVisibility"  class="login-signup-form">
-                <h4 style="color:#3a5768!important">Sign In</h4>
+                <h4  style="color:#3a5768!important">Sign In</h4>
 
                 <a @click="gotoSignUp()" style="color:blue!important;font-size: medium;"  class="fontfamily mt-4 mb-4">Not registered yet?
               </a>
@@ -39,10 +39,81 @@
                   style="width:400px;margin:auto"          
                 />
                 <div style="marginTop:10px"></div>
-             <div style="display: inline-block;">
+             <!-- <div style="display: inline-block;">
     <input style="vertical-align: middle;" type="checkbox" class="mr-2" v-model="checked">
     <span style="vertical-align: middle;">Did you want to take services!</span>
-</div>
+</div> -->
+<!-- <div class="service-icons mt-3">
+    <span style="display: inline-block;">
+      <input style="vertical-align: middle;" type="checkbox"  v-model="packing"> <v-icon title="Order Packing">mdi-dolly-flatbed</v-icon>
+  <v-icon  title="Order Packing">mdi-box</v-icon>
+  </span>
+  <span class="ml-3" style="display: inline-block;">
+    <input style="vertical-align: middle;" type="checkbox"  v-model="storage"> <v-icon title="Storage">mdi-dolly-flatbed</v-icon>
+  <v-icon   title="Storage">mdi-warehouse</v-icon>
+  </span>
+  <span class="ml-3" style="display: inline-block;">
+    <input style="vertical-align: middle;" type="checkbox"  v-model="returnProcessing"> <v-icon title="Returns Processing">mdi-dolly-flatbed</v-icon>
+  <v-icon   title="Returns Processing">mdi-undo</v-icon>
+  </span>
+  <span class="ml-3" style="display: inline-block;">
+    <input style="vertical-align: middle;" type="checkbox"  v-model="rework"> <v-icon title="Rework">mdi-dolly-flatbed</v-icon>
+  <v-icon   title="Rework">mdi-tools</v-icon>
+  </span>
+  <span class="ml-3" style="display: inline-block;">
+    <input style="vertical-align: middle;" type="checkbox"  v-model="bussiness"> <v-icon title="Small Business">mdi-dolly-flatbed</v-icon>
+  <v-icon   title="Small Business">mdi-store</v-icon>
+  </span>
+</div> -->
+<b-modal @ok="onSave" centered ok-title="Save"  id="modal-service-icons" title="Select Services" ok-only>
+  <b-list-group>
+    <b-list-group-item>
+      <div class="service-icons d-flex justify-content-between align-items-center">
+        <span class="d-flex align-items-center">
+          <v-icon>mdi-box</v-icon>
+          <span class="ml-3">Order Packing</span>
+        </span>
+        <input type="checkbox" style="cursor: pointer;" v-model="packing">
+      </div>
+    </b-list-group-item>
+    <b-list-group-item>
+      <div class="service-icons d-flex justify-content-between align-items-center">
+        <span class="d-flex align-items-center">
+          <v-icon>mdi-warehouse</v-icon>
+          <span class="ml-3">Storage</span>
+        </span>
+        <input type="checkbox" style="cursor: pointer;" v-model="storage">
+      </div>
+    </b-list-group-item>
+    <b-list-group-item>
+      <div class="service-icons d-flex justify-content-between align-items-center">
+        <span class="d-flex align-items-center">
+          <v-icon>mdi-undo</v-icon>
+          <span class="ml-3">Returns Processing</span>
+        </span>
+        <input type="checkbox" style="cursor: pointer;" v-model="returnProcessing">
+      </div>
+    </b-list-group-item>
+    <b-list-group-item>
+      <div class="service-icons d-flex justify-content-between align-items-center">
+        <span class="d-flex align-items-center">
+          <v-icon>mdi-tools</v-icon>
+          <span class="ml-3">Rework</span>
+        </span>
+        <input type="checkbox" style="cursor: pointer;" v-model="rework">
+      </div>
+    </b-list-group-item>
+    <b-list-group-item>
+      <div class="service-icons d-flex justify-content-between align-items-center">
+        <span class="d-flex align-items-center">
+          <v-icon>mdi-store</v-icon>
+          <span class="ml-3">Small Business</span>
+        </span>
+        <input type="checkbox" style="cursor: pointer;" v-model="business">
+      </div>
+    </b-list-group-item>
+  </b-list-group>
+</b-modal>
                 <!-- <v-select
                 class="form-field  reg-log-field  text-center"
                 style="padding-top: 12px!important; display: flex; flex-direction: column; align-items: center;"
@@ -139,7 +210,9 @@
 		        	<li class="nav-item"><a @click="gotoStore()" class="nav-link">Store</a></li>
 		        	<li class="nav-item"><a @click="gotoTech()" class="nav-link">Technology</a></li>
 		          <li class="nav-item"><a @click="gotoContact()" class="nav-link">Contact</a></li>
-              <li v-if="userLoggedIn" class="nav-item"><a @click="gotoRecord()" class="nav-link">Record</a></li>
+		          <li v-if="isAdmin" class="nav-item"><a @click="gotoUsers()" class="nav-link">Users</a></li>
+             
+              <li v-if="!isAdmin && userLoggedIn" class="nav-item"><a @click="gotoRecord()" class="nav-link">Record</a></li>
 		         
               <li @click="logout" v-if="userLoggedIn" style="cursor:pointer" class="dropdown loginBtn nav-item d-md-flex align-items-center">
                 <v-icon class="float-right" color="#228B22" >mdi-logout</v-icon>
@@ -149,6 +222,7 @@
                 <v-icon   class="float-right" color="#228B22" >mdi-login</v-icon>
                 Login
               </li>
+
 		        </ul>
             </b-navbar-nav>
             </b-collapse>
@@ -174,6 +248,9 @@ export default {
     auth.onAuthStateChanged((user) => {
   if (user) {
     this.userLoggedIn=true;
+    if(user.email== "admin@admin.com"){
+      this.isAdmin=true;
+}
     
     console.log('User is logged in:', user);
     // You can perform actions for a logged-in user here
@@ -187,15 +264,20 @@ export default {
 return{
   loginVisibility:true,
   signUpVisibility:false,emailSignUp:null,usernameSignUp:null,passwordSignUp:null,
-  email:null,password:null,userLoggedIn:false,service_select:null,checked:false
+  email:null,password:null,userLoggedIn:false,service_select:null,checked:false,isAdmin:false,
+  rework:false,storage:false,packing:false,picking:false,bussiness:false,returnProcessing:false
+
 }
   },
 methods:{
+  onSave(){
+this.gotoRecord();
+  },
   gotoAbout(){
     window.location.href = '/about'
 
     // window.reload();
-    // this.$router.replace('/about')
+    // this.$router.push({ path: "/about"});
 
   },
   gotoStore(){
@@ -220,7 +302,13 @@ methods:{
 
   },
   gotoRecord(){
-    window.location.href = '/inventory'
+    // window.location.href = '/inventory'
+    this.$router.push({ path: "/inventory"});
+
+  },
+  gotoUsers(){
+    // window.location.href = '/users'
+    this.$router.push({ path: "/users"});
 
   },
   categoryToast() {
@@ -251,54 +339,213 @@ methods:{
           console.error('Error logging out:', error.message);
         });
   },
-  login(){
-    //  if(this.service_select != null ){
-    auth.signInWithEmailAndPassword(this.email, this.password)
+async login(){
+  const { email, password } = this;
+  if (email === "admin@admin.com") {
+      // If user is admin, redirect to admin panel or perform other admin-specific actions
+      auth.signInWithEmailAndPassword(email, password)
         .then(() => {
         
           this.closeNav();
           this.authToast('User logged in successfully!');
           // alert("User logged in successfully!");
           console.log('User logged in successfully!');
+
           if (typeof localStorage !== 'undefined') {
-          localStorage.setItem('email', this.email);
+          localStorage.setItem('email', email);
+          
 
     // localStorage is available
     // Your code here
 } else {
     // localStorage is not available, handle accordingly
 }
-    this.gotoRecord();
+this.gotoUsers();
 
-        this.email="";this.password="";
-      })
-        .catch((error) => {
-          this.authToast('invalid Email/Password.');       
-          console.error('Error logging in:', error.message);
-        });
+}).catch((error) => {
+    // Handle the error
+    switch (error.code) {
+      case 'auth/invalid-email':
+        console.error('Invalid email address');
+        break;
+      case 'auth/user-disabled':
+        console.error('User account is disabled');
+        break;
+      case 'auth/user-not-found':
+        console.error('User not found');
+        break;
+      case 'auth/wrong-password':
+        console.error('Incorrect password');
+        this.authToast('Incorrect password');
+        break;
+      default:
+        console.error('An error occurred:', error.message);
+        break;
+    }
+  });
+
+       // Exit the function early
+    }  
+  const userQuery = await firebase.firestore().collection('users').where('email', '==', email).get();
+
+    if (userQuery.empty) {
+      console.log('No matching user document found.');
+      this.errorMessage = 'No matching user document found.';
+      return;
+    }
+
+    // Get the first document from the query (assuming email is unique)
+    const userDoc = userQuery.docs[0];
+    const userData = userDoc.data();
+    if (userData.active) {
+      // Allow user to sign in
+      console.log('User is active. Signing in...');
+      // this.authToast('User logged in successfully!');
+      // Redirect to dashboard or perform other actions
+      auth.signInWithEmailAndPassword(email, password)
+        .then(() => {
+        
+          this.closeNav();
+          this.authToast('User logged in successfully!');
+          this.$bvModal.show('modal-service-icons');
+
+          // alert("User logged in successfully!");
+          console.log('User logged in successfully!');
+
+          if (typeof localStorage !== 'undefined') {
+          localStorage.setItem('email', email);
+          
+
+    // localStorage is available
+    // Your code here
+} else {
+    // localStorage is not available, handle accordingly
+}
+// this.gotoRecord();
+
+});
+    }else{
+      this.authToast('You dont have rights to get Login');
+    } 
+},
+
+//   async login() {
+//   try {
+//     const { email, password } = this;
+//     // Authenticate user with Firebase Authentication
+//     const userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
+//     const user = userCredential.user;
+    
+//     // Check if the user is admin
+//     if (user.email === "admin@admin.com") {
+//       // If user is admin, redirect to admin panel or perform other admin-specific actions
+//       console.log('Admin logged in. Redirecting to admin panel...');
+//       this.gotoUsers();
+//       return; // Exit the function early
+//     }
+    
+//     // Retrieve user data from Firestore
+//     const userDoc = await firebase.firestore().collection('users').doc(user.uid).get();
+//     const userData = userDoc.data();
+    
+//     // Check if user is active
+//     if (userData.active) {
+//       // Redirect to dashboard or perform other actions
+//       console.log('User is active. Redirecting...');
+//       this.gotoRecord();
+//     } else {
+      
+//       // If user is not active, display error message
+//       this.errorMessage = 'User is not active.';
+//       // Log out user
+//       await firebase.auth().signOut();
+//     }
+//   } catch (error) {
+//     console.error('Login error:', error.message);
+//     this.errorMessage = error.message;
+//   }
+// },
+//   login(){
+//     //  if(this.service_select != null ){
+//     auth.signInWithEmailAndPassword(this.email, this.password)
+//         .then(() => {
+        
+//           this.closeNav();
+//           this.authToast('User logged in successfully!');
+//           // alert("User logged in successfully!");
+//           console.log('User logged in successfully!');
+//           if (typeof localStorage !== 'undefined') {
+//           localStorage.setItem('email', this.email);
+
+//     // localStorage is available
+//     // Your code here
+// } else {
+//     // localStorage is not available, handle accordingly
+// }
+//     this.gotoRecord();
+
+//         this.email="";this.password="";
+//       })
+//         .catch((error) => {
+//           this.authToast('invalid Email/Password.');       
+//           console.error('Error logging in:', error.message);
+//         });
 
        
 
-      // }else{
-      //    this.categoryToast();
-      //   }
-  },
+//       // }else{
+//       //    this.categoryToast();
+//       //   }
+//   },
   signup(){
     auth.createUserWithEmailAndPassword(this.emailSignUp, this.passwordSignUp)
+    .then((userCredential) => {
+        // User successfully created, you can get the UID from the userCredential
+        const user = userCredential.user;
+        const uid = user.uid;
+
+        // Add user data to Firestore using the UID
+        firebase.firestore().collection('users').doc(uid).set({
+            username: this.usernameSignUp,
+            email: this.emailSignUp,
+            active: true
+        })
         .then(() => {
-          firebase.firestore().collection('users').add({
-     username: this.usernameSignUp,
-        email: this.emailSignUp        
-        });
-          console.log('User registered successfully!');
-          this.authToast('User registered successfully!');
-          this.signUpVisibility=false;this.loginVisibility=true
-          this.usernameSignUp="";this.emailSignUp="";this.passwordSignUp="";
+            // User data added successfully
+            this.authToast('User registered successfully!');
+            // this.signUpVisibility = false;
+            // this.loginVisibility = false;
+            this.closeNav();
+            this.usernameSignUp = "";
+            this.emailSignUp = "";
+            this.passwordSignUp = "";
         })
         .catch((error) => {
-          this.authToast('Something went wrong registering user!');
-          console.error('Error registering user:', error.message);
+            // Error adding user data to Firestore
+            this.authToast('Something went wrong registering user!');
+            console.error('Error adding user data to Firestore:', error.message);
         });
+    })
+    .catch((error) => {
+        // Error creating user
+        this.authToast('Something went wrong registering user!');
+        console.error('Error registering user:', error.message);
+    });
+    // auth.createUserWithEmailAndPassword(this.emailSignUp, this.passwordSignUp)
+    //     .then(() => {
+    //       firebase.firestore().collection('users').doc().add({
+    //  username: this.usernameSignUp,
+    //     email: this.emailSignUp,
+    //     active:true        
+    //     });
+    //       this.authToast('User registered successfully!');
+    //       this.signUpVisibility=false;this.loginVisibility=true
+    //       this.usernameSignUp="";this.emailSignUp="";this.passwordSignUp="";
+    //     })
+    //     .catch((error) => {
+    //       this.authToast('Something went wrong registering user!');
+    //       console.error('Error registering user:', error.message);
+    //     });
   },
  gotoLogin(){
   this.signUpVisibility=false;this.loginVisibility=true

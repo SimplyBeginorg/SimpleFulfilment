@@ -14,6 +14,18 @@ import 'firebase/compat/auth';
 import "@/pages";
 // import 'firebase/firebase-firestore'
 export default function (Vue, {appOptions, router, head, isClient }) {
+  if(process.isClient){
+
+    router.beforeEach(async (to, from, next) => {
+        if (to.matched.some(record => record.meta.requiresAuth) &&  !await firebase.auth().currentUser) {
+      
+          next({ path: '/' });
+        } else {
+          next();
+        }
+
+  })
+}
   // Set default layout as a global component
   head.link.push({
     rel: 'stylesheet',
