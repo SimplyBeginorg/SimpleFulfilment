@@ -210,7 +210,7 @@
 		        	<li class="nav-item"><a @click="gotoStore()" class="nav-link">Store</a></li>
 		        	<li class="nav-item"><a @click="gotoTech()" class="nav-link">Technology</a></li>
 		          <li class="nav-item"><a @click="gotoContact()" class="nav-link">Contact</a></li>
-		          <li v-if="isAdmin" class="nav-item"><a href="/user-record" class="nav-link">Users</a></li>
+		          <li v-if="isAdmin" class="nav-item"><a @click="gotoUsers()" class="nav-link">Users</a></li>
              
               <li v-if="!isAdmin && userLoggedIn" class="nav-item"><a @click="gotoRecord()" class="nav-link">Record</a></li>
 		         
@@ -274,40 +274,40 @@ methods:{
 this.gotoRecord();
   },
   gotoAbout(){
-    window.location.href = '/about'
+    window.location.href = '/about';
 
     // window.reload();
     // this.$router.push({ path: "/about"});
 
   },
   gotoStore(){
-    window.location.href = '/store'
+    window.location.href = '/store';
 
     // window.reload();
     // this.$router.replace('/about')
 
   },
   gotoTech(){
-    window.location.href = '/technology'
+    window.location.href = '/technology';
 
     // window.reload();
     // this.$router.replace('/about')
 
   },
   gotoContact(){
-    window.location.href = '/contact'
+    window.location.href = '/contact';
 
     // window.reload();
     // this.$router.replace('/about')
 
   },
   gotoRecord(){
-    window.location.href = '/inventory'
+    window.location.href = '/inventory';
     // this.$router.push({ path: "/inventory"});
 
   },
   gotoUsers(){
-    window.location.href = '/user-record'
+    window.location.href = '/user-record';
     // this.$router.push({ path: "/user-record"});
   },
   categoryToast() {
