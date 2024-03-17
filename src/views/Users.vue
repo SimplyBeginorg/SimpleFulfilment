@@ -50,7 +50,7 @@
   import 'firebase/compat/app';
   
   export default {
-    name: 'UserList',
+
     data() {
       return {
         users: [],statusOptions: [

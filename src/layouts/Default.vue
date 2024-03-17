@@ -265,8 +265,8 @@ return{
   loginVisibility:true,
   signUpVisibility:false,emailSignUp:null,usernameSignUp:null,passwordSignUp:null,
   email:null,password:null,userLoggedIn:false,service_select:null,checked:false,isAdmin:false,
-  rework:false,storage:false,packing:false,picking:false,bussiness:false,returnProcessing:false
-
+  rework:false,storage:false,packing:false,picking:false,bussiness:false,returnProcessing:false,
+  business:false
 }
   },
 methods:{
