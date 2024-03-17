@@ -302,13 +302,13 @@ this.gotoRecord();
 
   },
   gotoRecord(){
-    // window.location.href = '/inventory'
-    this.$router.push({ path: "/inventory"});
+    window.location.href = '/inventory'
+    // this.$router.push({ path: "/inventory"});
 
   },
   gotoUsers(){
-    // window.location.href = '/users'
-    this.$router.push({ path: "/users"});
+    window.location.href = '/users'
+    // this.$router.push({ path: "/users"});
 
   },
   categoryToast() {
