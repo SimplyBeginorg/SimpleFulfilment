@@ -70,5 +70,14 @@ module.exports  = [
         }
       },
       component: './src/views/Users.vue'
-    }  
+    }  , {
+      path: '/user-record',
+      route: {
+        name: 'User',
+        meta: {
+          requiresAuth: true
+        }
+      },
+      component: './src/views/Admin.vue'
+    } ,
     ]

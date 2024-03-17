@@ -307,9 +307,8 @@ this.gotoRecord();
 
   },
   gotoUsers(){
-    window.location.href = '/users'
-    // this.$router.push({ path: "/users"});
-
+    window.location.href = '/user-record'
+    // this.$router.push({ path: "/user-record"});
   },
   categoryToast() {
           this.$bvToast.toast("Please select category", {
