@@ -210,7 +210,7 @@
 		        	<li class="nav-item"><a @click="gotoStore()" class="nav-link">Store</a></li>
 		        	<li class="nav-item"><a @click="gotoTech()" class="nav-link">Technology</a></li>
 		          <li class="nav-item"><a @click="gotoContact()" class="nav-link">Contact</a></li>
-		          <li v-if="isAdmin" class="nav-item"><a @click="gotoUsers()" class="nav-link">Users</a></li>
+		          <li v-if="isAdmin" class="nav-item"><a href="/user-record" class="nav-link">Users</a></li>
              
               <li v-if="!isAdmin && userLoggedIn" class="nav-item"><a @click="gotoRecord()" class="nav-link">Record</a></li>
 		         
@@ -307,8 +307,8 @@ this.gotoRecord();
 
   },
   gotoUsers(){
-    // window.location.href = '/user-record'
-    this.$router.push({ path: "/user-record"});
+    window.location.href = '/user-record'
+    // this.$router.push({ path: "/user-record"});
   },
   categoryToast() {
           this.$bvToast.toast("Please select category", {
@@ -359,7 +359,7 @@ async login(){
 } else {
     // localStorage is not available, handle accordingly
 }
-this.gotoUsers();
+// this.gotoUsers();
 
 }).catch((error) => {
     // Handle the error
