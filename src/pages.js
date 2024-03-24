@@ -56,7 +56,7 @@ module.exports  = [
       route: {
         name: 'Inventory',
         meta: {
-          requiresAuth: false
+          requiresAuth: true
         }
       },
       component: './src/views/InventoryUpload.vue'
@@ -75,7 +75,7 @@ module.exports  = [
       route: {
         name: 'User',
         meta: {
-          requiresAuth: false
+          requiresAuth: true
         }
       },
       component: './src/views/Admin.vue'
