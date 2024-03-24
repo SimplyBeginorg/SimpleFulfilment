@@ -24,7 +24,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="user in users" :key="user.id">
+              <tr @click="navigateToUserDetails(user.email)" v-for="user in users" :key="user.id">
                 <td class="pt-4">{{ user.email }}</td>
                 <td>
                     <v-select
@@ -78,6 +78,11 @@ import { auth } from '~/main.js';
         });
     },
     methods:{
+      navigateToUserDetails(email) {
+        this.$router.push({ name: 'Records', params: { email: email } })
+
+        // this.$router.push({ path: "/user/", query: { email } });
+    },
         userToast(message) {
           this.$bvToast.toast(message, {
             title: 'FullFillment',

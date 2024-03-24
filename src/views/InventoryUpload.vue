@@ -66,7 +66,7 @@
       <button @click="uploadFile" :disabled="!file">Upload File</button>
     </div> -->
       <div class="row table-responsive mt-4 ">
-        <div  v-if="uploadedFiles.length === 0">
+        <div  v-if="usersRecord.length === 0">
          <h2 class="pt-10" style="margin:auto;textAlign:center;color:#3a5768!important"> No files uploaded yet.</h2>
         </div>
         <table v-else
@@ -81,13 +81,17 @@
             <thead>
               <tr>
                 <th>Name</th>
+                <th>Date</th>
+                <th>Status</th>
                 <th>Download</th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="(file, index) in uploadedFiles" :key="index">
-                <td>{{ file.name }}</td>
-                <td><v-icon style="marginLeft:20px" color="green" @click="downloadFile(file.name)">mdi-download</v-icon></td>
+              <tr v-for="(file, index) in usersRecord" :key="index">
+                <td>{{ file.filename }}</td>
+                <td>{{file.date}}</td>
+                <td>{{file.status}}</td>
+                <td><v-icon style="marginLeft:20px" color="white" @click="downloadFile(file.filename)">mdi-download</v-icon></td>
               </tr>
             </tbody>
           </table>
@@ -108,6 +112,7 @@ import { auth } from '~/main.js';
     data() {
       return {
         file: null,
+        usersRecord:[],
         uploadedFiles: [],
       uploadError: null,
       showEdit:false,
@@ -154,7 +159,18 @@ import { auth } from '~/main.js';
           const snapshot = await storageRef.child(this.file.name).put(this.file);
           console.log('File uploaded:', snapshot.metadata.name);
           this.file = null; // Reset file input
-          this.fetchUploadedFiles(today);
+          const downloadURL = await snapshot.ref.getDownloadURL();
+
+      // Save record in Firestore
+      await firebase.firestore().collection('uploads').add({
+        date: today,
+        status: 'pending', // Assuming status is initially pending
+        filename: snapshot.metadata.name,
+        userEmail: emailUser, // Add the email of the user who uploaded the file
+        fileURL: downloadURL // Add the download URL of the file
+      });
+      this.getUserRecord();
+          // this.fetchUploadedFiles(today);
           this.FileToast();
           this.showEdit=false;
 
@@ -220,15 +236,36 @@ directoryRef.listAll()
       //   const metadata = await fileRef.getMetadata()
       //   this.uploadedFiles.push({ name: metadata.name, date: metadata.timeCreated.toISOString().slice(0, 10) })
       // })
+    },
+    getUserRecord(){
+      this.usersRecord.length=0;
+      if (typeof localStorage !== 'undefined') {
+          const email = localStorage.getItem('email');
+      const db = firebase.firestore();
+      const usersCollection = db.collection('uploads').where('userEmail', '==', email)
+        ;
+  
+      usersCollection.get()
+        .then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            const user = doc.data();
+            user.id = doc.id;
+            this.usersRecord.push(user);
+          });
+        })
+        .catch((error) => {
+          console.error('Error getting documents: ', error);
+        });
+      }
     }
     },
  
     created() {
   
       const today = new Date().toISOString().split('T')[0]; // Get today's date
-      this.fetchUploadedFiles(today);
-      this.fetchUploadedFile()
-
+      // this.fetchUploadedFiles(today);
+      // this.fetchUploadedFile()
+      this.getUserRecord();
     }
   };
   </script>

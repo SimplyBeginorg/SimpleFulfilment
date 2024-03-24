@@ -80,4 +80,14 @@ module.exports  = [
       },
       component: './src/views/Admin.vue'
     } ,
+   {
+      path: '/user/:email',
+      route: {
+        name: 'Records',
+        meta: {
+          requiresAuth: true
+        }
+      },
+      component: './src/views/UserRecords.vue'
+    } 
     ]

@@ -93,7 +93,7 @@
               <div class="col-12 scol-sm-12 col-lg-8 col-md-8 ">
                 <div class="row">
                   <div class="col-5 col-lg-5 col-md-5 mt-10">
-    <g-image class="about titleheading" style="width:100%;border-radius: 10px;" src="https://www.efulfillmentservice.com/wp-content/uploads/2015/03/Aisle-Shot-2.jpg" />  
+    <g-image class="about titleheading" style="width:100%;border-radius: 10px;" :src="imageUrl" />  
   </div>
   <div class="col-lg-7 col-md-7 col-sm-6 col-6  image_margin">
     <g-image class="about " style="width:100%;border-radius: 10px;" src="https://www.shipbob.com/wp-content/uploads/2019/12/fulfillment-center-shipbob.jpg" />  
@@ -219,7 +219,8 @@ export default {
    components: {
       Footer
     },data(){
-      return{homePage:[]}},
+      return{homePage:[],      imageUrl: 'https://www.efulfillmentservice.com/wp-content/uploads/2015/03/Aisle-Shot-2.jpg'
+}},
     mounted(){
       // axios.get('https://api.storyblok.com/v2/cdn/stories/homefirst?version=draft&token=a0JvifJUK2XuIzV1Lhblvwtt&cv=1704612574').then(
    axios.get("https://api.storyblok.com/v2/cdn/stories/homepage?version=draft&token=a0JvifJUK2XuIzV1Lhblvwtt&cv=1706463359").then(

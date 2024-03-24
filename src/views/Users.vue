@@ -23,7 +23,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="user in users" :key="user.id">
+              <tr  @click="navigateToUserDetails(user.email)" v-for="user in users" :key="user.id">
                 <td class="pt-4">{{ user.email }}</td>
                 <td>
                     <v-select
@@ -60,7 +60,12 @@
       };
     },
     created() {
-      const db = firebase.firestore();
+    this.getUserRecord();
+    },
+
+    methods:{
+      getUserRecord(){
+        const db = firebase.firestore();
       const usersCollection = db.collection('users');
   
       usersCollection.get()
@@ -74,8 +79,12 @@
         .catch((error) => {
           console.error('Error getting documents: ', error);
         });
+
+      }
+      ,
+      navigateToUserDetails(email) {
+        this.$router.push({ path: "/user/", params: { email } });
     },
-    methods:{
         userToast(message) {
           this.$bvToast.toast(message, {
             title: 'FullFillment',
