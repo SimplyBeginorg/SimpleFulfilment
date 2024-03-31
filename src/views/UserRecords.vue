@@ -67,22 +67,21 @@ export default {
     };
   },
   created() {
-    const db = firebase.firestore();
-      const usersCollection = db.collection('uploads').where('userEmail', '==', email)
-        ;
+    // const db = firebase.firestore();
+    //   const usersCollection = db.collection('uploads').where('userEmail', '==', email);
   
-      usersCollection.get()
-        .then((querySnapshot) => {
-          querySnapshot.forEach((doc) => {
-            const user = doc.data();
-            user.id = doc.id;
-            this.users.push(user);
-          });
-        })
-        .catch((error) => {
-          console.error('Error getting documents: ', error);
-        });
-    // this.fetchUserData();
+    //   usersCollection.get()
+    //     .then((querySnapshot) => {
+    //       querySnapshot.forEach((doc) => {
+    //         const user = doc.data();
+    //         user.id = doc.id;
+    //         this.users.push(user);
+    //       });
+    //     })
+    //     .catch((error) => {
+    //       console.error('Error getting documents: ', error);
+    //     });
+    this.fetchUserData();
   },
   methods: {
     userToast(message) {
@@ -102,7 +101,7 @@ export default {
     },
     fetchUserData() {
       const email = this.$route.params.email;
-      console.log(email)
+      // console.log(email)
       const db = firebase.firestore();
 
       // Query Firestore for the user document based on the email
