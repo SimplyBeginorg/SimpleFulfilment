@@ -274,44 +274,44 @@ methods:{
 this.gotoRecord();
   },
   gotoAbout(){
-    // window.location.href = '/about';
+    window.location.href = '/about';
 
     // window.reload();
-    this.$router.push({ path: "/about"});
+    // this.$router.push({ path: "/about"});
 
   },
   gotoStore(){
-    // window.location.href = '/store';
-    this.$router.push({ path: "/store"});
+    window.location.href = '/store';
+    // this.$router.push({ path: "/store"});
 
     // window.reload();
     // this.$router.replace('/about')
 
   },
   gotoTech(){
-    // window.location.href = '/technology';
-    this.$router.push({ path: "/technology"});
+    window.location.href = '/technology';
+    // this.$router.push({ path: "/technology"});
 
     // window.reload();
     // this.$router.replace('/about')
 
   },
   gotoContact(){
-    // window.location.href = '/contact';
-    this.$router.push({ path: "/contact"});
+    window.location.href = '/contact';
+    // this.$router.push({ path: "/contact"});
 
     // window.reload();
     // this.$router.replace('/about')
 
   },
   gotoRecord(){
-    // window.location.href = '/inventory';
-    this.$router.push({ path: "/inventory"});
+    window.location.href = '/inventory';
+    // this.$router.push({ path: "/inventory"});
 
   },
   gotoUsers(){
-    // window.location.href = '/user-record/';
-    this.$router.push({ path: "/user-record"});
+    window.location.href = '/user-record/';
+    // this.$router.push({ path: "/user-record"});
   },
   categoryToast() {
           this.$bvToast.toast("Please select category", {

@@ -15,7 +15,7 @@
          <!-- <h6 style="fontWeight:300" class="mt-5 mb-10">CCCCCCCCCCCCCCCCCCCCCCCC</h6> -->
           </div>
           <div class="col-12 scol-sm-12 col-lg-7 col-md-7 ">
-<g-image class="mt-4 about" style="width:100%;" src="https://assets-global.website-files.com/622faf89982b1a82750a4f2b/63172e5b7aecead750bb8af9_order%20fulfillment%20management%20-%20header.png" />  
+<g-image class="mt-4 about" style="width:100%;" :src="homePage.homeImage" />  
           </div>
           </div>
           <!-- <div style="height: 180px;"></div> -->
@@ -30,21 +30,21 @@
           <div  class="row">
             <div class="  col-lg-1 col-md-1 "></div>
             <div class="card mr-4 col-12 col-md-3 col-lg-3" style="width: 15rem;">
-              <img class="card-img-top " style="width:100px;margin:auto" src="https://cdn-icons-png.flaticon.com/512/2250/2250406.png" alt="Card image cap">
+              <img class="card-img-top " style="width:100px;margin:auto" :src="homePage.homeCardOneImage" alt="Card image cap">
               <div class="card-body">
                 <p class="card-text text-center" style="textAlign:center;width:100%;fontWeight:700!important;color:#3a5768!important;">{{homePage.homeCardOneTitle}}</p>
                 <p class="card-text text-center" style="textAlign:center;width:100%;fontWeight:100!important;color:#3a5768!important;">{{ homePage.homeCardOneDesc }}</p>
               </div>
             </div>
             <div class="card mr-4 col-12 col-md-3 col-lg-3" style="width: 15rem;">
-              <img class="card-img-top " style="width:100px;margin:auto" src="https://cdn2.iconfinder.com/data/icons/delivery-42/64/order-processing-ship-parcel-packing-512.png" alt="Card image cap">
+              <img class="card-img-top " style="width:100px;margin:auto" :src="homePage.homeCardTwoImage" alt="Card image cap">
               <div class="card-body">
                 <p class="card-text text-center" style="textAlign:center;width:100%;fontWeight:700!important;color:#3a5768!important;">{{homePage.homeCardTwoTitle}}</p>
                 <p class="card-text text-center" style="textAlign:center;width:100%;fontWeight:100!important;color:#3a5768!important;">{{ homePage.homeCardTwoDesc }}</p>
               </div>
             </div>
             <div class="card mr-4 col-12 col-md-3 col-lg-3" style="width: 15rem;">
-              <img class="card-img-top " style="width:100px;margin:auto" src="https://cdn2.iconfinder.com/data/icons/ecommerce-back-office-system-filled-outline/64/ready-to-ship-stock-check-inventory-goods-qc-512.png" alt="Card image cap">
+              <img class="card-img-top " style="width:100px;margin:auto" :src="homePage.homeCardThreeImage" alt="Card image cap">
               <div class="card-body">
                 <p class="card-text text-center" style="textAlign:center;width:100%;fontWeight:700!important;color:#3a5768!important;">{{ homePage.homeCardThreeTitle }}
            </p>
@@ -56,7 +56,7 @@
               <div class="col-12 scol-sm-12 col-lg-6 col-md-6">
   <!-- <g-image class="mt-4 " style="width:80%;" src="https://previews.123rf.com/images/dobric/dobric1507/dobric150700019/43616819-collection-des-travailleurs-de-la-construction-architecte-peintre-ma%C3%A7on-%C3%A9lectricien-vitrier.jpg" />    -->
    <!-- <g-image src="https://media.istockphoto.com/photos/carpenter-taking-measurement-picture-id481628382?b=1&k=20&m=481628382&s=612x612&w=0&h=ZDTN6D6e4i8B52pJHfiUdX6Pi7QPc46dCVXhmRV7E1I="/> -->
-              <g-image  style="width:95%;height:100%" class="whychoose" src="https://www.frozenfoodeurope.com/wp-content/uploads/2019/03/Logistics-678x381.jpg?x35408" />
+              <g-image  style="width:95%;height:100%" class="whychoose" :src="homePage.homeThirdCompImage" />
                 </div>            
                       
                 <div style="fontWeight:700!important;color:#3a5768!important;" class=" col-12 scol-sm-12 col-lg-6 col-md-6">
@@ -93,19 +93,19 @@
               <div class="col-12 scol-sm-12 col-lg-8 col-md-8 ">
                 <div class="row">
                   <div class="col-5 col-lg-5 col-md-5 mt-10">
-    <g-image class="about titleheading" style="width:100%;border-radius: 10px;" :src="imageUrl" />  
+    <g-image class="about titleheading" style="width:100%;border-radius: 10px;" :src="homePage.homeFourCompImage1" />  
   </div>
   <div class="col-lg-7 col-md-7 col-sm-6 col-6  image_margin">
-    <g-image class="about " style="width:100%;border-radius: 10px;" src="https://www.shipbob.com/wp-content/uploads/2019/12/fulfillment-center-shipbob.jpg" />  
+    <g-image class="about " style="width:100%;border-radius: 10px;" :src="homePage.homeFourCompImage2" />  
   </div>
   </div>        
   <div class="row">
     <div class="col-1"></div>
     <div class="col-5 mt-10">
-<g-image class="about" style="width:100%;border-radius: 10px;" src="https://img.freepik.com/free-photo/smiling-warehouse-worker-moving-boxes-shelf_342744-1476.jpg?w=740&t=st=1701094696~exp=1701095296~hmac=4758dfede06947e4a5e693fe5016e48df4094b862bda5f32021ac48151fba473" />  
+<g-image class="about" style="width:100%;border-radius: 10px;" :src="homePage.homeCompFourImage3" />  
 </div>
 <div class="col-5">
-<g-image class="about" style="width:100%;border-radius: 10px;" src="https://img.freepik.com/premium-photo/forklifts-transport-goods-warehousesai-technology-generated-image_1112-11875.jpg?size=626&ext=jpg" />  
+<g-image class="about" style="width:100%;border-radius: 10px;" :src="homePage.homeCompFourImage4" />  
 </div>
 </div>        
   </div>

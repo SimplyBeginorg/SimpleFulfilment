@@ -15,7 +15,7 @@
 </p>     
         </div>
         <div class="col-12 scol-sm-12 col-lg-4 col-md-4 ">
-<g-image class="mt-4 about" style="width:100%;" src="https://www.dropoff.com/wp-content/uploads/2022/09/Last-Mile-Fulfillment-Everything-You-Need-to-Know-01.png" />  
+<g-image class="mt-4 about" style="width:100%;" :src="aboutPage.FirstCompImage" />  
         </div>
         </div>
   </div>
@@ -28,7 +28,7 @@
 <div style="overflow-x:hidden" class="container">
   <div style="color:#3a5768" class="row mt-10 mb-5">
     <div class="col-12 scol-sm-12 col-lg-6 col-md-6 ">
-      <g-image class="mt-10 about" style="marginLeft:10px;marginRight:10px;width:85%;border-radius: 20px;" src="https://www.pfcfulfills.com/wp-content/uploads/2020/06/iStock-824351914-opt.jpg" />  
+      <g-image class="mt-10 about" style="marginLeft:10px;marginRight:10px;width:85%;border-radius: 20px;" :src="aboutPage.ThirdCompImage" />  
           </div>
     <div class="col-12 scol-sm-12 col-lg-6 col-md-6 ">
   <p style="fontSize:20px" class="mt-8">
@@ -99,7 +99,7 @@
 <div style="overflow-x:hidden" class="container">
   <div style="color:#3a5768" class="row mt-10 mb-5">
     <div class="col-12 scol-sm-12 col-lg-6 col-md-6 ">
-      <g-image class="mt-10 about" style="marginLeft:10px;marginRight:10px;width:85%;border-radius:20px;" src="https://m.media-amazon.com/images/G/01/ops/FA-PA.jpg" />  
+      <g-image class="mt-10 about" style="marginLeft:10px;marginRight:10px;width:85%;border-radius:20px;" :src="aboutPage.FiveCompImage" />  
           </div>
           <div class="col-12 scol-sm-12 col-lg-6 col-md-6 ">
             <h4 style="color:#3a5768!important;fontWeight:600" class="mt-5 titleheading">{{ aboutPage.FifthCompTitle }}
@@ -126,12 +126,12 @@
          
                </div>
                <div class="col-12 scol-sm-12 col-lg-6 col-md-6 ">
-                <g-image class="mt-10 about" style="marginLeft:10px;marginRight:10px;width:85%;border-radius:20px;" src="https://assets-global.website-files.com/6335405b79fa25a3fd6733d2/63381216c3205168a71c2ef7_Inventory%20Management%20for%20Small%20Businesses.png" />  
+                <g-image class="mt-10 about" style="marginLeft:10px;marginRight:10px;width:85%;border-radius:20px;" :src="aboutPage.SixCompImage" />  
                     </div>
       </div>
       <div style="color:#3a5768" class="row mt-10 mb-5">
         <div class="col-12 scol-sm-12 col-lg-6 col-md-6 ">
-          <g-image class="mt-10 about" style="marginLeft:10px;marginRight:10px;width:85%;border-radius:20px;" src="https://www.symbia.com/wp-content/uploads/2023/02/Dedicated-Fulfillment-Partner-1-765x510.jpg" />  
+          <g-image class="mt-10 about" style="marginLeft:10px;marginRight:10px;width:85%;border-radius:20px;" :src="aboutPage.SevenCompImage" />  
               </div>
         <div class="col-12 scol-sm-12 col-lg-6 col-md-6 ">
           <h4 style="color:#3a5768!important;fontWeight:600" class="mt-5 titleheading">{{ aboutPage.SeventhCompTitle }}
@@ -163,7 +163,7 @@
   </p>
        </div>
        <div class="col-12 scol-sm-12 col-lg-6 col-md-6 ">
-        <g-image class="mt-10 about" style="marginLeft:10px;marginRight:10px;width:100%;border-radius:20px;" src="https://myfulfillmentteam.com/wp-content/uploads/2015/05/slider.jpg" />  
+        <g-image class="mt-10 about" style="marginLeft:10px;marginRight:10px;width:100%;border-radius:20px;" :src="aboutPage.EightCompImage" />  
             </div>
 </div>
   </div>
@@ -184,7 +184,7 @@ export default {
     mounted(){
       axios.get('https://api.storyblok.com/v2/cdn/stories/aboutpage?version=draft&token=a0JvifJUK2XuIzV1Lhblvwtt&cv=1704640335').then(
    data=>{
-    //  console.log(data.data.story)
+     console.log(data.data.story)
         this.aboutPage= data.data.story.content
    
    }).catch(error=>{

@@ -12,7 +12,7 @@
     </div>
 
         <div class="col-12 col-sm-12 col-md-12 col-lg-6">
-         <g-image fit="true" src="https://img.sdcexec.com/files/base/acbm/scn/image/2022/12/Gorodenkoff_AdobeStock_465501008.63a0bafc487b5.png?auto=format%2Ccompress&fit=max&q=70&w=1200"></g-image>
+         <g-image fit="true" :src="technologyPage.Image"></g-image>
         </div>
 
         </div>

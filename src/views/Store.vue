@@ -15,7 +15,7 @@
             <h6 class="col-12" style="color:#3a5768!important;paddingTop:0px!important;paddingBottom:0px!important">{{ storePage.FirstComponentDesc1 }} </h6>
         </div>
         <div  class="row  mt-10 mb-10">
-            <g-image class="small-phone" style="overflow:hidden;width:80%;height:400px;borderRadius:10px;margin:auto; " src="https://www.ahconstruction.com/assets//media/gallery/a3.jpg"></g-image>
+            <g-image class="small-phone" style="overflow:hidden;width:80%;height:400px;borderRadius:10px;margin:auto; " :src="storePage.FirstCompImage"></g-image>
           </div>
     </div>
    
@@ -58,7 +58,7 @@
             <div class="col-12 col-sm-12 col-md-12 col-lg-7 mt-10">
                 <g-image
                 style="marginLeft:10px;marginRight:10px;width:85%;border-radius:50px;" 
-               src="https://igzy.com/wp-content/uploads/2021/07/Warehouse-Video-Surveillance.png"></g-image>         
+               :src="storePage.ThirdCompImage"></g-image>         
             </div>
             <div  class="row mt-5 mb-5">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-4">
@@ -131,7 +131,7 @@
             <div class="col-12 scol-sm-12 col-lg-6 col-md-6 ">
               <g-image class="mt-10 about" 
               style="marginLeft:10px;height:70%;marginRight:10px;width:85%;border-radius:20px;" 
-              src="https://4.imimg.com/data4/PX/KG/MY-1806755/industrial-racking-1000x1000.jpg" />  
+              :src="storePage.SixCompImage" />  
                   </div>
             <div class="col-12 scol-sm-12 col-lg-6 col-md-6 ">
                 <div class="p-4" style="backgroundColor:#EAF6FA;border-radius: 25px;">
