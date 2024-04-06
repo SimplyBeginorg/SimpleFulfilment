@@ -49,7 +49,7 @@
   
   <script>
   import firebase from 'firebase/compat/app';
-  import  'firebase/compat/firestore'
+  import  'firebase/compat/firestore';
 import { auth } from '~/main.js';
   
   export default {
@@ -61,8 +61,13 @@ import { auth } from '~/main.js';
       ],
       };
     },
-    created() {
-      const db = firebase.firestore();
+    mounted() {
+      this.loadUser();
+    
+    },
+    methods:{
+      loadUser(){
+        const db = firebase.firestore();
       const usersCollection = db.collection('users');
   
       usersCollection.get()
@@ -76,8 +81,7 @@ import { auth } from '~/main.js';
         .catch((error) => {
           console.error('Error getting documents: ', error);
         });
-    },
-    methods:{
+      },
       navigateToUserDetails(email) {
         this.$router.push({ name: 'Records', params: { email: email } })
 

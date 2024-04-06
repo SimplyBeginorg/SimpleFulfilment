@@ -64,14 +64,14 @@ module.exports  = [
     {
       path: '/users',
       route: {
-        name: 'User',
+        name: 'Users',
         meta: {
           requiresAuth: true
         }
       },
       component: './src/views/Users.vue'
     }  , {
-      path: '/user-record/',
+      path: '/userrecord/',
       route: {
         name: 'User',
         meta: {
@@ -79,9 +79,9 @@ module.exports  = [
         }
       },
       component: './src/views/Admin.vue'
-    } ,
-   {
-      path: '/user/:email',
+    },
+     {
+      path: '/records/:email',
       route: {
         name: 'Records',
         meta: {
@@ -89,5 +89,6 @@ module.exports  = [
         }
       },
       component: './src/views/UserRecords.vue'
-    } 
+    }
+   
     ]

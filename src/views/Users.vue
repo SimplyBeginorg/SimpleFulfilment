@@ -59,7 +59,7 @@
       ],
       };
     },
-    created() {
+    mounted() {
     this.getUserRecord();
     },
 
@@ -83,7 +83,7 @@
       }
       ,
       navigateToUserDetails(email) {
-        this.$router.push({ path: "/user/", params: { email } });
+        // this.$router.push({ path: "/user/", params: { email } });
     },
         userToast(message) {
           this.$bvToast.toast(message, {

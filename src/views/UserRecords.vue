@@ -52,7 +52,6 @@
 
 <script>
 import firebase from 'firebase/compat/app';
-  import 'firebase/compat/app';
 export default {
     data() {
     return {
@@ -66,22 +65,9 @@ export default {
        // Object to store the user details
     };
   },
-  created() {
-    // const db = firebase.firestore();
-    //   const usersCollection = db.collection('uploads').where('userEmail', '==', email);
-  
-    //   usersCollection.get()
-    //     .then((querySnapshot) => {
-    //       querySnapshot.forEach((doc) => {
-    //         const user = doc.data();
-    //         user.id = doc.id;
-    //         this.users.push(user);
-    //       });
-    //     })
-    //     .catch((error) => {
-    //       console.error('Error getting documents: ', error);
-    //     });
+  mounted() {
     this.fetchUserData();
+ 
   },
   methods: {
     userToast(message) {
@@ -100,26 +86,44 @@ export default {
       }
     },
     fetchUserData() {
+      // try {
       const email = this.$route.params.email;
-      // console.log(email)
-      const db = firebase.firestore();
+//       console.log(email)
+//       const db = firebase.firestore();
 
-      // Query Firestore for the user document based on the email
-      db.collection('uploads')
-        .where('userEmail', '==', email)
-        .get()
-        .then(querySnapshot => {
-          if (!querySnapshot.empty) {
-            const userDoc = querySnapshot.docs[0]; // Assuming only one document per email
-            this.userEmail = userDoc.data().userEmail;
-            this.userDetails = userDoc.data(); // Store the entire user document data
-            // Access other user details from this.userDetails
-          } else {
-            console.log('No user found with the provided email');
-          }
+//       // Query Firestore for the user document based on the email
+//       db.collection('uploads')
+//         .where('userEmail', '==', email)
+//         .get()
+//         .then(querySnapshot => {
+//           if (!querySnapshot.empty) {
+//             const userDoc = querySnapshot.docs[0]; // Assuming only one document per email
+//             this.userEmail = userDoc.data().userEmail;
+//             this.userDetails = userDoc.data(); // Store the entire user document data
+//             // Access other user details from this.userDetails
+//           } else {
+//             console.log('No user found with the provided email');
+//           }
+//         })
+//         .catch(error => {
+//           console.error('Error fetching user data:', error);
+//         });
+//       } catch (error) {
+//   console.error('Error querying Firestore:', error);
+// }
+   const db = firebase.firestore();
+      const usersCollection = db.collection('uploads').where('userEmail', '==', email);
+  
+      usersCollection.get()
+        .then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            const user = doc.data();
+            user.id = doc.id;
+            this.users.push(user);
+          });
         })
-        .catch(error => {
-          console.error('Error fetching user data:', error);
+        .catch((error) => {
+          console.error('Error getting documents: ', error);
         });
     },
     saveUserStatus(user) {

@@ -310,7 +310,7 @@ this.gotoRecord();
 
   },
   gotoUsers(){
-    window.location.href = '/user-record/';
+    window.location.href = '/userrecord/';
     // this.$router.push({ path: "/user-record"});
   },
   categoryToast() {
