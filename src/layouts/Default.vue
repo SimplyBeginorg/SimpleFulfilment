@@ -206,13 +206,13 @@
 		      <!-- <div class="collapse navbar-collapse" id="ftco-nav"> -->
 		        <ul class="navbar-nav  mr-md-3">
 		        	<li class="nav-item "><a href="/" class="nav-link">Home</a></li>
-		        	<li  class="nav-item"><a  @click="gotoAbout()" class="nav-link">About Us</a></li>
-		        	<li class="nav-item"><a @click="gotoStore()" class="nav-link">Store</a></li>
-		        	<li class="nav-item"><a @click="gotoTech()" class="nav-link">Technology</a></li>
-		          <li class="nav-item"><a @click="gotoContact()" class="nav-link">Contact</a></li>
-		          <li v-if="isAdmin" class="nav-item"><a @click="gotoUsers()" class="nav-link">Users</a></li>
+		        	<li  class="nav-item"><a  href="/about" class="nav-link">About Us</a></li>
+		        	<li class="nav-item"><a href="/store" class="nav-link">Store</a></li>
+		        	<li class="nav-item"><a href="/technology" class="nav-link">Technology</a></li>
+		          <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+		          <li v-if="isAdmin" class="nav-item"><a href="/users" class="nav-link">Users</a></li>
              
-              <li v-if="!isAdmin && userLoggedIn" class="nav-item"><a @click="gotoRecord()" class="nav-link">Record</a></li>
+              <li v-if="!isAdmin && userLoggedIn" class="nav-item"><a href="/inventory" class="nav-link">Record</a></li>
 		         
               <li @click="logout" v-if="userLoggedIn" style="cursor:pointer" class="dropdown loginBtn nav-item d-md-flex align-items-center">
                 <v-icon class="float-right" color="#228B22" >mdi-logout</v-icon>
