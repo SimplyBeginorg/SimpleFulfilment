@@ -182,9 +182,10 @@ export default {
     data(){
       return{aboutPage:[]}},
     mounted(){
+     console.log("About Page load")
+
       axios.get('https://api.storyblok.com/v2/cdn/stories/aboutpage?version=draft&token=a0JvifJUK2XuIzV1Lhblvwtt&cv=1704640335').then(
    data=>{
-     console.log(data.data.story)
         this.aboutPage= data.data.story.content
    
    }).catch(error=>{
