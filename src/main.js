@@ -25,10 +25,7 @@ export default function (Vue, {appOptions, router, head, isClient }) {
         next()
       }
     })
-  }else[
-    next()
-
-  ]
+  }
 //   if(process.isClient){
 
 //     router.beforeEach(async (to, from, next) => {
