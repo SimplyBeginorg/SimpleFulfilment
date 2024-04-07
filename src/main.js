@@ -13,31 +13,31 @@ import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
 // import 'firebase/firebase-firestore'
 export default function (Vue, {appOptions, router, head, isClient }) {
-  if(process.isClient){
+//   if(process.isClient){
 
-    router.beforeEach(async (to, from, next) => {
-      // const requireAuth= to.matched.some((record) => record.meta.auth)
-      // const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+//     router.beforeEach(async (to, from, next) => {
+//       // const requireAuth= to.matched.some((record) => record.meta.auth)
+//       // const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
     
     
-        // if (requiresAuth &&  !await firebase.auth().currentUser) {
-          if (to.matched.some(record => record.meta.requiresAuth) &&  !await firebase.auth().currentUser) {
+//         // if (requiresAuth &&  !await firebase.auth().currentUser) {
+//           if (to.matched.some(record => record.meta.requiresAuth) &&  !await firebase.auth().currentUser) {
       
-          next({ path: '/' });
+//           next({ path: '/' });
          
-        //  this.$forceUpdate();
-        // this.$router.go()
-        // window.location.reload();
+//         //  this.$forceUpdate();
+//         // this.$router.go()
+//         // window.location.reload();
 
-        //  console.log('chala')
-        } else {
-          next();
+//         //  console.log('chala')
+//         } else {
+//           next();
 
-        }
-          // next();
+//         }
+//           // next();
 
-  })
-}
+//   })
+// }
 //   if(process.isClient){
 
 //     router.beforeEach(async (to, from, next) => {
