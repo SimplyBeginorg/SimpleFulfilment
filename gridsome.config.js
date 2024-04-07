@@ -9,18 +9,6 @@ const DeepScopePlugin = require('webpack-deep-scope-plugin').default;
 
 module.exports = {
   siteName: 'Fulfilment',
-  pages: {
-    '/': ['/src/pages/Index.vue'],
-    '/about': ['/src/pages/About.vue'],
-    '/contact': ['/src/pages/Contact.vue'],
-    '/store': ['/src/pages/Store.vue'],
-    '/technology': ['/src/pages/Technology.vue'],
-    '/inventory': ['/src/pages/InventoryUpload.vue'],
-    '/userrecord/': ['/src/pages/Admin.vue'],
-    '/users': ['/src/pages/Users.vue'],
-    '/records/:email': ['/src/pages/UserRecords.vue'],
-    // ... other static routes
-  },
 
     // chainWebpack(config) {
     //     config.plugin('scope')
