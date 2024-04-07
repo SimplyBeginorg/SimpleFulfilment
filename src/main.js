@@ -14,6 +14,18 @@ import 'firebase/compat/auth';
 import "@/pages";
 // import 'firebase/firebase-firestore'
 export default function (Vue, {appOptions, router, head, isClient }) {
+  if (process.isClient) {
+    router.beforeEach(async (to, from, next) => {
+      const requiresAuth = to.matched.some(record => record.meta.requiresAuth)
+      const isAuthenticated = await firebase.auth().currentUser
+
+      if (requiresAuth && !isAuthenticated) {
+        next({ path: '/' })
+      } else {
+        next()
+      }
+    })
+  }
 //   if(process.isClient){
 
 //     router.beforeEach(async (to, from, next) => {
