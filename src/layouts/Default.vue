@@ -206,8 +206,7 @@
 		      <!-- <div class="collapse navbar-collapse" id="ftco-nav"> -->
 		        <ul class="navbar-nav  mr-md-3">
 		        	<li class="nav-item "><a href="/" class="nav-link">Home</a></li>
-              <g-link class="nav-link" to="/about">About</g-link>
-		        	<!-- <li  class="nav-item"><a  @click="gotoAbout()" class="nav-link">About Us</a></li> -->
+		        	<li  class="nav-item"><a  @click="gotoAbout()" class="nav-link">About Us</a></li>
 		        	<li class="nav-item"><a @click="gotoStore()" class="nav-link">Store</a></li>
 		        	<li class="nav-item"><a @click="gotoTech()" class="nav-link">Technology</a></li>
 		          <li class="nav-item"><a @click="gotoContact()" class="nav-link">Contact</a></li>
