@@ -277,7 +277,8 @@ this.gotoRecord();
     // window.location.href = '/about';
 
     // window.reload();
-    this.$router.push({ path: "/about"});
+    // this.$router.push({ path: "/about"});
+    this.$router.push({ name: 'About' });
 
   },
   gotoStore(){
