@@ -14,12 +14,12 @@
 //     // Use the Pages API here: https://gridsome.org/docs/pages-api/
 //   })
 // }
-const pages = require('./src/pages')
+// const pages = require('./src/pages')
 
-module.exports = function (api) {
-  api.createPages(({ createPage }) => {
-    for (const page of pages) {
-      createPage(page)
-    }
-  })
-}
+// module.exports = function (api) {
+//   api.createPages(({ createPage }) => {
+//     for (const page of pages) {
+//       createPage(page)
+//     }
+//   })
+// }
