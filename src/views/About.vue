@@ -194,6 +194,10 @@ export default {
     },
     metaInfo: {
     title: 'About Total Fulfilment - Warehousing & Distribution Company',
+    meta:[{
+               requiresAuth: false
+
+    }]
 //   meta: [
 //  {name: "description", content: "Total Fulfilment is a family-owned warehousing and distribution center company offering industry-leading order fulfillment services. With skilled teams, robust processes, and cutting-edge technology, we ensure efficient pick, pack, and shipping for our clients. Learn more about our experienced team and personalized approach."},
 //                     { property: "og:title", content: 'About Total Fulfilment - Warehousing & Distribution Company'},
