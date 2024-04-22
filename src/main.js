@@ -11,20 +11,21 @@ import './assets/style.css'
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
+import "@/pages";
 // import 'firebase/firebase-firestore'
 export default function (Vue, {appOptions, router, head, isClient }) {
-  router.beforeEach(async (to, from, next) => {
-    // Check if the route requires authentication
-      if (to.matched.some(record => record.meta.requiresAuth) &&  !await firebase.auth().currentUser) {
-        // Redirect to the login page if not authenticated
-        next({ path: '/' });
-      } else {
-        next(); // proceed to the route
-      }
-    // } else {
-    //   next(); // does not require auth, make sure to always call next()!
-    // }
-  });
+  // router.beforeEach(async (to, from, next) => {
+  //   // Check if the route requires authentication
+  //     if (to.matched.some(record => record.meta.requiresAuth) &&  !await firebase.auth().currentUser) {
+  //       // Redirect to the login page if not authenticated
+  //       next({ path: '/' });
+  //     } else {
+  //       next(); // proceed to the route
+  //     }
+  //   // } else {
+  //   //   next(); // does not require auth, make sure to always call next()!
+  //   // }
+  // });
 //   if(process.isClient){
 
 //     router.beforeEach(async (to, from, next) => {
