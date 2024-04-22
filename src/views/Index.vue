@@ -1,24 +1,17 @@
 <template>
   <Layout>
-<div style="overflow-x:hidden" class="container">
-  <div style="color:#3a5768" class="row mt-10 ">
+<div  class="container">
+  <div style="color:#3a5768;" class="row mt-10 ">
           <div class="col-12 scol-sm-12 col-lg-5 col-md-5 ">
          <h1 style="color:#3a5768!important;fontSize:3rem;fontWeight:700" class="mt-5 titleheading">{{homePage.homeTitle}}</h1>
-         <!-- <h1 style="color:#3a5768!important;fontSize:3rem;fontWeight:700" class="mt-5">
-          
-         </h1> -->
-      
-         <!-- <h5 style="fontWeight:400" class="mt-5">Talash is a leading multiple service provider company catering to your 360 needs with quality guaranteed.</h5> 
-         -->
+        
          <h5 style="fontWeight:400;;color:#3a5768!important" class="mt-2 mb-4 titleheading">{{homePage.homeDesc }}
         </h5>
-         <!-- <h6 style="fontWeight:300" class="mt-5 mb-10">CCCCCCCCCCCCCCCCCCCCCCCC</h6> -->
           </div>
           <div class="col-12 scol-sm-12 col-lg-7 col-md-7 ">
 <g-image class="mt-4 about" style="width:100%;" :src="homePage.homeImage" />  
           </div>
           </div>
-          <!-- <div style="height: 180px;"></div> -->
       
     <div style="color:#3a5768" class="row mt-15">
       <h1 class="mt-7 fullHeadingMob ml-5 col-12" style="marign:auto;width:100%;fontWeight:300!important;color:#3a5768!important;">Total Fulfilment takes all the frustration out of
@@ -54,8 +47,6 @@
             </div>
             <div class="row mt-16 mb-15  pb-10">
               <div class="col-12 scol-sm-12 col-lg-6 col-md-6">
-  <!-- <g-image class="mt-4 " style="width:80%;" src="https://previews.123rf.com/images/dobric/dobric1507/dobric150700019/43616819-collection-des-travailleurs-de-la-construction-architecte-peintre-ma%C3%A7on-%C3%A9lectricien-vitrier.jpg" />    -->
-   <!-- <g-image src="https://media.istockphoto.com/photos/carpenter-taking-measurement-picture-id481628382?b=1&k=20&m=481628382&s=612x612&w=0&h=ZDTN6D6e4i8B52pJHfiUdX6Pi7QPc46dCVXhmRV7E1I="/> -->
               <g-image  style="width:95%;height:100%" class="whychoose" :src="homePage.homeThirdCompImage" />
                 </div>            
                       
@@ -71,14 +62,7 @@
               <div style="fontWeight:700" class="mt-6 mb-12 app_detail"><span><v-icon class="mr-4">mdi-check</v-icon></span> {{ homePage.homeThirdCompChecklistFive }}</div>
  
             </div>
-                           <!-- <div style="fontWeight:700" class="mt-6 app_detail"><span><v-icon class="mr-4">mdi-check</v-icon></span> Inventory management tools.                .</div> -->
-                
-              <!-- <div style="fontWeight:700" class="mt-6"><span><v-icon class="mr-4">mdi-check</v-icon></span>Vetted and background-checked in house staff</div> -->
-              <!-- <div style="fontWeight:700" class="mt-6"><span><v-icon class="mr-4">mdi-check</v-icon></span>Connects you to Verified and Trained Technicians.</div> -->
-              <!-- <div style="fontWeight:700" class="mt-6 app_detail"><span><v-icon class="mr-4">mdi-check</v-icon></span>High-Tech and Most Advanced Equipment</div> -->
-              <!-- <div style="fontWeight:700" class="mt-6 app_detail"><span><v-icon class="mr-4">mdi-check</v-icon></span>Quality Control and Safety.</div> -->
-              <!-- <div style="fontWeight:700" class="mt-6 app_detail pb-10"><span><v-icon class="mr-4">mdi-check</v-icon></span>Provides High-quality, Reliability and Safety.</div> -->
-              <!-- </div> -->
+                      
             </div>
             <div style="color:#3a5768" class="row mt-10 ">
               <div class="col-12 scol-sm-12 col-lg-4 col-md-4 ">
@@ -88,7 +72,6 @@
              <h5 style="fontWeight:400;;color:#3a5768!important" class="mt-2 titleheading">
               {{ homePage.homeFourCompDesc }}
             </h5>
-             <!-- <h6 style="fontWeight:300" class="mt-5 mb-10">CCCCCCCCCCCCCCCCCCCCCCCC</h6> -->
               </div>
               <div class="col-12 scol-sm-12 col-lg-8 col-md-8 ">
                 <div class="row">
@@ -117,46 +100,8 @@
                 </h2>
               <h6 class="mt-2 mb-4 titleheading" style="textAlign:center;width:100%;fontWeight:300" >{{homePage.homeFiveCompDesc}}</h6>
               </div>
-           
-
-            <!-- <b-card
-    title="We receive and store your products"
-    img-src="https://cdn-icons-png.flaticon.com/512/2250/2250406.png"
-    img-alt="Image"
-      tag="article"
-      img-width="20px"
-    style="background-Color:white; "
-    class="mb-2 text-center"
-  >
-    <b-card-text class="text-center">
-      Over 12,000 pallet spaces in a secure controlled fulfilment warehouse environment.
-    </b-card-text>
-
-  </b-card> -->
-            <!-- <a href="/cleaning-services" style="color:black;text-decoration:none;margin:10px;marginRight:25px!important" class="col-3 col-sm-3 col-lg-1 col-md-1"> -->
-             <!-- <v-icon size="60">mdi-broom</v-icon> -->  
-          <!-- <g-image style="height:68px;width:68px;;" src="https://cdn.iconscout.com/icon/free/png-256/cleaning-2846561-2366071.png"/> -->
-
-           <!-- <h6 style="fontWeight:400;marginTop:10px">Cleaning</h6> -->
-           <!-- </a> -->
-           <!-- <a href="/plumber-services" style="color:black;text-decoration:none;margin:10px;marginRight:25px!important" class="service_icon col-3 col-sm-3 col-lg-1 col-md-1"> -->
-             <!-- <v-icon size="60">mdi-tools</v-icon> -->
-          <!-- <g-image style="height:68px;width:68px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc2wCbeBPPIJDW440cMClS2hhD7RhgDRMs1g&usqp=CAU"/> -->
-          
-           <!-- <h6 style="fontWeight:400;marginTop:10px;paddingLeft:5px">Plumber</h6> -->
-           <!-- </a> -->
-        
           </div>
           <div style="color:#3a5768!important;fontWeight:700!important" class="row mb-10 mt-7">
-             <!-- <v-stepper mobile>
-    <v-stepper-header>
-      <template v-for="(item, i) in items" :key="i">
-        <v-divider v-if="i"></v-divider>
-
-        <v-stepper-item v-bind="item"></v-stepper-item>
-      </template>
-    </v-stepper-header>
-  </v-stepper> -->
             <div class="row">
                <div class="col-6">
                 <h4 style="text-align: right;color:#3a5768!important;fontWeight:700!important">{{homePage.homeFiveSubCompOneLeftTitle}}</h4>
@@ -203,12 +148,10 @@
                </div>
 
           </div>
-          <div style="color:#3a5768;marginTop:100px!important" class="row mt-12">
-            <!-- <h1   style="textAlign:center;width:100%;fontWeight:700!important;color:#3a5768!important;">Order Fulfilment Services</h1> -->
-                
+          <div style="color:#3a5768;marginTop:100px!important" class="row mt-12">      
           </div>
-  <Footer />
     </div>
+    <Footer />
   </Layout>
 </template>
 

@@ -206,7 +206,7 @@
 		      <!-- <div class="collapse navbar-collapse" id="ftco-nav"> -->
 		        <ul class="navbar-nav  mr-md-3">
 		        	<li class="nav-item "><a href="/" class="nav-link">Home</a></li>
-		        	<li  class="nav-item"><a  @click="gotoAbout()" class="nav-link">About Us</a></li>
+              <div class="nav-item "> <g-link class="nav-link" to="/about/">About</g-link></div>
 		        	<li class="nav-item"><a @click="gotoStore()" class="nav-link">Store</a></li>
 		        	<li class="nav-item"><a @click="gotoTech()" class="nav-link">Technology</a></li>
 		          <li class="nav-item"><a @click="gotoContact()" class="nav-link">Contact</a></li>
@@ -274,32 +274,32 @@ methods:{
 this.gotoRecord();
   },
   gotoAbout(){
-    window.location.href = '/about';
+    // window.location.href = '/about';
 
     // window.reload();
-    // this.$router.push({ path: "/about"});
+    this.$router.push({ path: "/about"});
     // this.$router.push({ name: 'About' });
 
   },
   gotoStore(){
-    window.location.href = '/store';
-    // this.$router.push({ path: "/store"});
+    // window.location.href = '/store';
+    this.$router.push({ path: "/store"});
 
     // window.reload();
     // this.$router.replace('/about')
 
   },
   gotoTech(){
-    window.location.href = '/technology';
-    // this.$router.push({ path: "/technology"});
+    // window.location.href = '/technology';
+    this.$router.push({ path: "/technology"});
 
     // window.reload();
     // this.$router.replace('/about')
 
   },
   gotoContact(){
-    window.location.href = '/contact';
-    // this.$router.push({ path: "/contact"});
+    // window.location.href = '/contact';
+    this.$router.push({ path: "/contact"});
 
     // window.reload();
     // this.$router.replace('/about')
@@ -311,8 +311,8 @@ this.gotoRecord();
 
   },
   gotoUsers(){
-    window.location.href = '/userrecord/';
-    // this.$router.push({ path: "/userrecord/"});
+    // window.location.href = '/userrecord/';
+    this.$router.push({ path: "/userrecord/"});
   },
   categoryToast() {
           this.$bvToast.toast("Please select category", {

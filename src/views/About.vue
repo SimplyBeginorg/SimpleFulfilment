@@ -56,7 +56,7 @@
   <div class="row">
     <div class="col">
      <g-image style="width:50%;" class="float-right" src="https://noatumesolutions.com/wp-content/uploads/2022/09/post-local-delivery.png"></g-image>      
-      <!-- <v-icon class="float-right" color="#228B22" >mdi-local-shipping</v-icon> -->
+   
     </div>
     <div class="col">
       <h5 style="color:#3a5768!important;">{{ aboutPage.FourthCompPalletsNumbers }}
@@ -70,7 +70,6 @@
   <div class="row">
     <div class="col">
      <g-image style="width:40%" class="float-right" src="https://icon-graphica.com/wp-content/uploads/shield01.png"></g-image>      
-      <!-- <v-icon class="float-right" color="#228B22" >mdi-local-shipping</v-icon> -->
     </div>
     <div class="col">
       <h5 style="color:#3a5768!important;">{{ aboutPage.FourthCompItemsNumbers }}
@@ -84,7 +83,6 @@
   <div class="row">
     <div class="col">
      <g-image style="width:50%" class="float-right" src="https://www.leser.com/-/media/images/11-leser-news/2021/september/icon_lieferversprechen_blau.png?la=de-DE&h=39.8&w=53.2&hash=18783506B65F0E1E87FF645F07133B3D"></g-image>      
-      <!-- <v-icon class="float-right" color="#228B22" >mdi-local-shipping</v-icon> -->
     </div>
     <div class="col">
       <h5 style="color:#3a5768!important;">{{aboutPage.FourthCompPackagesNumbers}}</h5>
